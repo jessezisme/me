@@ -1,0 +1,119 @@
+@use 'sass:map';
+@use 'sass:color';
+
+/*=============================================
+=     Grid     =
+=============================================*/
+$grid: (
+    'sm': 640px,
+    'md': 768px,
+    'lg': 1024px,
+    'xl': 1280px,
+    '2xl': 1600px,
+);
+/*=====  End of Grid  ======*/
+
+/*=============================================
+=            colors            =
+=============================================*/
+
+$color-accents: (
+    1: #446abb,
+);
+
+$colors: (
+    // standard
+    'black': #000,
+    'white': #fff,
+    'grey-5': darken(#fff, 5%),
+    'grey-10': darken(#fff, 10%),
+    'grey-20': darken(#fff, 20%),
+    'grey-30': darken(#fff, 30%),
+    'grey-40': darken(#fff, 40%),
+    'grey-50': darken(#fff, 50%),
+    'grey-60': darken(#fff, 60%),
+    'grey-70': darken(#fff, 70%),
+    'grey-80': darken(#fff, 80%),
+    'grey-90': darken(#fff, 90%),
+    'grey-95': darken(#fff, 95%),
+    // accent
+    'acc-1': map.get($color-accents, 1),
+    'acc-1-50': lighten(map.get($color-accents, 1), 45%),
+    'acc-1-100': lighten(map.get($color-accents, 1), 40%),
+    'acc-1-200': lighten(map.get($color-accents, 1), 30%),
+    'acc-1-300': lighten(map.get($color-accents, 1), 20%),
+    'acc-1-400': lighten(map.get($color-accents, 1), 10%),
+    'acc-1-500': map.get($color-accents, 1),
+    'acc-1-600': darken(map.get($color-accents, 1), 10%),
+    'acc-1-700': darken(map.get($color-accents, 1), 20%),
+    'acc-1-800': darken(map.get($color-accents, 1), 30%),
+    'acc-1-900': darken(map.get($color-accents, 1), 40%),
+    // base text
+    'text-1': #000,
+    'text-1-inv': #fff,
+    'text-link-1': color.mix(map.get($color-accents, 1), #000, 80%),
+    'text-link-1-inv': color.mix(map.get($color-accents, 1), #fff, 20%),
+    // success state
+    'text-success': #0f742a
+);
+
+/*=====  End of colors  ======*/
+
+/*=============================================
+=            Spacing            =
+=============================================*/
+$spacing: (
+    0: 0px,
+    1px: 1px,
+);
+$spacing-counter: 1;
+@while $spacing-counter < 100 {
+    $setValue: 0.25 * $spacing-counter;
+    $spacing: map.set($spacing, #{$spacing-counter}, #{$setValue}rem);
+    $spacing-counter: $spacing-counter + 1;
+}
+/*=====  End of Spacing  ======*/
+
+/*=============================================
+=            Font family          =
+=============================================*/
+$font-family: (
+    primary: unquote("'Work Sans', sans-serif"),
+);
+
+/*=====  End of Font family  ======*/
+
+/*=============================================
+=            Font size            =
+=============================================*/
+$font-size: (
+    'xs': 0.75rem,
+    'sm': 0.9rem,
+    'base': 1rem,
+    'lg': 1.125rem,
+    'xl': 1.25rem,
+    '2xl': 1.5rem,
+    '3xl': 1.875rem,
+    '4xl': 2rem,
+    '5xl': 2.75rem,
+    '6xl': 3.5rem,
+    '7xl': 4.5rem,
+    '8xl': 6rem,
+);
+
+/*=====  End of Font size  ======*/
+
+/*=============================================
+=            Line height            =
+=============================================*/
+$line-height: (
+    'none': 1,
+    'xs': 1.25,
+    'sm': 1.375,
+    'md': 1.5,
+    'xl': 1.625,
+    '2xl': 1.8,
+    '3xl': 2,
+    '4xl': 2.25,
+);
+/*=====  End of Line height  ======*/

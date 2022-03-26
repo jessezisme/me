@@ -1,0 +1,27 @@
+.g-icon {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    background: var(--color-text-1);
+    mask-repeat: no-repeat;
+    mask-size: 100%;
+    mask-position: center;
+
+    // github
+    &.github {
+        mask-image: url('~/static/img/icon/icon-github.svg');
+    }
+    // codepen
+    &.codepen {
+        mask-image: url('~/static/img/icon/icon-codepen.svg');
+    }
+    // live link - lightning bolt icon
+    &.bolt {
+        mask-image: url('~/assets/img/icon/icon-bolt.svg');
+    }
+}
+
+a.g-icon,
+a .g-icon {
+    background-color: var(--color-text-link-1);
+}

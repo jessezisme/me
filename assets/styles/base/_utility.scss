@@ -1,0 +1,148 @@
+/*=============================================
+=            container            =
+=============================================*/
+.g-container {
+    width: 1600px;
+    max-width: calc(100% - 30px);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.g-container-main {
+    // border-radius: 20px;
+    // border: 10px solid #fffbe5;
+    // border: 10px solid transparent;
+    // box-shadow: 0 0 6px 3px rgba(0, 0, 0, 0.06);
+}
+
+.g-container-pad {
+    padding: 30px 15px;
+
+    @include media-breakpoint-up(md) {
+        & {
+            padding: 30px;
+        }
+    }
+    @include media-breakpoint-up(lg) {
+        & {
+            padding: 60px 80px;
+        }
+    }
+}
+
+/*=====  End of container  ======*/
+
+/*=============================================
+=            spacing            =
+=============================================*/
+
+/*----------  padding  ----------*/
+.g-p {
+    @include convert-sass-map($spacing) using ($value) {
+        padding: $value;
+    }
+}
+.g-px {
+    @include convert-sass-map($spacing) using ($value) {
+        padding-left: $value;
+        padding-right: $value;
+    }
+}
+.g-py {
+    @include convert-sass-map($spacing) using ($value) {
+        padding-top: $value;
+        padding-bottom: $value;
+    }
+}
+.g-pt {
+    @include convert-sass-map($spacing) using ($value) {
+        padding-top: $value;
+    }
+}
+.g-pr {
+    @include convert-sass-map($spacing) using ($value) {
+        padding-right: $value;
+    }
+}
+.g-pb {
+    @include convert-sass-map($spacing) using ($value) {
+        padding-bottom: $value;
+    }
+}
+.g-pl {
+    @include convert-sass-map($spacing) using ($value) {
+        padding-bottom: $value;
+    }
+}
+
+/*----------  margin  ----------*/
+.g-m {
+    @include convert-sass-map($spacing) using ($value) {
+        margin: $value;
+    }
+}
+.g-mx {
+    @include convert-sass-map($spacing) using ($value) {
+        margin-left: $value;
+        margin-right: $value;
+    }
+}
+.g-my {
+    @include convert-sass-map($spacing) using ($value) {
+        margin-top: $value;
+        margin-bottom: $value;
+    }
+}
+.g-mt {
+    @include convert-sass-map($spacing) using ($value) {
+        margin-top: $value;
+    }
+}
+.g-mr {
+    @include convert-sass-map($spacing) using ($value) {
+        margin-right: $value;
+    }
+}
+.g-mb {
+    @include convert-sass-map($spacing) using ($value) {
+        margin-bottom: $value;
+    }
+}
+.g-ml {
+    @include convert-sass-map($spacing) using ($value) {
+        margin-bottom: $value;
+    }
+}
+
+/*=====  End of spacing  ======*/
+
+/*=============================================
+=            screen readers            =
+=============================================*/
+.g-sr-only {
+    @include make-responsive {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border-width: 0;
+    }
+}
+
+.g-unset-sr-only {
+    @include make-responsive {
+        position: static;
+        width: auto;
+        height: auto;
+        padding: 0;
+        margin: 0;
+        overflow: visible;
+        clip: auto;
+        white-space: normal;
+    }
+}
+/*=====  End of screen readers  ======*/
