@@ -1,8 +1,6 @@
 <template>
     <footer class="footer">
-        <div class="g-container">
-            <h1>The Footer</h1>
-        </div>
+        <div class="g-container"></div>
     </footer>
 </template>
 
@@ -11,3 +9,8 @@
         name: 'TheFooter',
     };
 </script>
+
+<style lang="scss" scoped>
+    .footer {
+    }
+</style>

@@ -6,29 +6,36 @@
         }"
     >
         <div class="feat_desc">
-            <div class="feat_desc-title">
+            <div class="feat_desc-title g-mb-8">
                 <slot name="title"></slot>
             </div>
             <div class="feat_desc-body">
-                <div class="feat_desc-text g-mb-4">
+                <div class="feat_desc-text g-mb-6">
                     <slot name="body"></slot>
                 </div>
-                <ul class="g-mb-8">
-                    <li v-for="(item, index) in techList" :key="index">{{ item }}</li>
-                </ul>
-                <div class="feat_cta-cont g-mt-8">
+                <div class="feat_cta-cont g-mb-6">
                     <span class="g-mb-4">
                         <a :href="linkLiveUrl" class="g-link" rel="noopener" target="_blank">
                             <span class="g-icon bolt"></span>
                             {{ linkLiveText }}
                         </a>
                     </span>
+                    <span v-if="linkCodepenUrl" class="g-mb-4">
+                        <a :href="linkCodepenUrl" class="g-link" rel="noopener" target="_blank">
+                            <span class="g-icon codepen"></span>
+                            {{ linkCodepenText }}
+                        </a>
+                    </span>
                     <span class="g-mb-4">
                         <a :href="linkCodeUrl" class="g-link" rel="noopener" target="_blank">
+                            <span class="g-icon github"></span>
                             {{ linkCodeText }}
                         </a>
                     </span>
                 </div>
+                <ul class="g-mb-8">
+                    <li v-for="(item, index) in techList" :key="index">{{ item }}</li>
+                </ul>
             </div>
         </div>
         <a :href="linkLiveUrl" target="_blank" class="feat_img-cont">
@@ -68,6 +75,16 @@
                 type: String,
                 default: 'Source Code',
             },
+            linkCodepenUrl: {
+                type: String,
+                default: '',
+                required: false,
+            },
+            linkCodepenText: {
+                type: String,
+                default: '',
+                required: false,
+            },
         },
     };
 </script>
@@ -93,15 +110,18 @@
         padding: 5px;
         font-size: var(--font-size-sm);
         background: var(--color-grey-10);
-        border-radius: 1px;
-        color: var(--color-grey-95);
+        border-radius: 4px;
+        color: var(--color-grey-80);
+        font-weight: bold;
     }
     /*=====  End of base styling  ======*/
 
     .feat {
         display: flex;
         flex-direction: column;
-        gap: 4rem 2rem;
+        padding: 30px;
+        background: var(--color-grey-10);
+        gap: 1.5rem;
     }
     .feat_cta-cont {
         display: flex;
@@ -111,11 +131,9 @@
     .feat_img-cont {
         display: flex;
         width: 100%;
-        height: 375px;
+        height: 325px;
         align-items: center;
         justify-content: center;
-        background: var(--color-grey-10);
-        border-radius: 8px;
 
         img,
         svg {
@@ -127,6 +145,7 @@
     @include media-breakpoint-up(lg) {
         .feat {
             flex-direction: row;
+            gap: 1rem;
 
             &.is-reverse {
                 flex-direction: row-reverse;

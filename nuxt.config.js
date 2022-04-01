@@ -15,7 +15,7 @@ export default {
             { name: 'format-detection', content: 'telephone=no' },
             { name: 'robots', content: 'noindex' },
         ],
-        link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+        link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon/favicon.ico' }],
     },
 
     // Global CSS: https://go.nuxtjs.dev/config-css
