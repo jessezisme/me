@@ -10,30 +10,55 @@
     padding-right: 15px;
 }
 
-// .g-container-pad {
-//     padding-left: 15px;
-//     padding-right: 15px;
-
-//     @include media-breakpoint-up(md) {
-//         & {
-//             padding: 30px;
-//         }
-//     }
-//     @include media-breakpoint-up(lg) {
-//         & {
-//             padding: 60px 80px;
-//         }
-//     }
-// }
-
-// .g-container-main {
-// border-radius: 20px;
-// border: 10px solid #fffbe5;
-// border: 10px solid transparent;
-// box-shadow: 0 0 6px 3px rgba(0, 0, 0, 0.06);
-// }
-
 /*=====  End of container  ======*/
+
+/*=============================================
+=            display helpers            =
+=============================================*/
+.g-dis {
+    &-block {
+        @include make-responsive {
+            display: block;
+        }
+    }
+    &-inline-block {
+        @include make-responsive {
+            display: inline-block;
+        }
+    }
+    &-inline {
+        @include make-responsive {
+            display: inline;
+        }
+    }
+    &-flex {
+        @include make-responsive {
+            display: flex;
+        }
+    }
+    &-inline-flex {
+        @include make-responsive {
+            display: inline-flex;
+        }
+    }
+    &-grid {
+        @include make-responsive {
+            display: grid;
+        }
+    }
+    &-inline-grid {
+        @include make-responsive {
+            display: inline-grid;
+        }
+    }
+    &-none {
+        @include make-responsive {
+            display: none;
+        }
+    }
+}
+
+/*=====  End of display utilities  ======*/
 
 /*=============================================
 =            spacing            =

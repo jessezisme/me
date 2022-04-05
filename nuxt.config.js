@@ -15,7 +15,14 @@ export default {
             { name: 'format-detection', content: 'telephone=no' },
             { name: 'robots', content: 'noindex' },
         ],
-        link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon/favicon.ico' }],
+        link: [
+            { rel: 'icon', type: 'image/x-icon', href: '/favicon/favicon.ico' },
+            {
+                rel: 'preconnect',
+                href: 'https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&display=swap',
+                crossorigin: '',
+            },
+        ],
     },
 
     // Global CSS: https://go.nuxtjs.dev/config-css

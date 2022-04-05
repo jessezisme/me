@@ -109,10 +109,16 @@
         display: inline-block;
         padding: 5px;
         font-size: var(--font-size-sm);
-        background: var(--color-grey-10);
+        background: var(--c-grey-80);
         border-radius: 4px;
-        color: var(--color-grey-80);
-        font-weight: bold;
+        color: var(--c-grey-10);
+    }
+    a {
+        color: var(--c-text-link-1-inv);
+        font-weight: normal;
+    }
+    a .g-icon {
+        background: var(--c-text-link-1-inv);
     }
     /*=====  End of base styling  ======*/
 
@@ -120,14 +126,13 @@
         display: flex;
         flex-direction: column;
         padding: 30px;
-        background: var(--color-grey-10);
+        background: var(--c-grey-10);
         gap: 1.5rem;
     }
     .feat_cta-cont {
         display: flex;
         flex-direction: column;
     }
-    // featured screenshot
     .feat_img-cont {
         display: flex;
         width: 100%;

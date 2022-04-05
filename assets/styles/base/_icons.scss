@@ -2,12 +2,13 @@
     display: inline-block;
     width: 1em;
     height: 1em;
-    background: var(--color-text-1);
+    background: var(--c-text-1);
     mask-repeat: no-repeat;
     mask-size: 100%;
     mask-position: center;
-    background-color: var(--color-text-link-1);
-    vertical-align: middle;
+    background-color: var(--c-text-link-1);
+    vertical-align: sub;
+
     // github
     &.github {
         mask-image: url('~/static/img/icon/icon-github.svg');
@@ -32,4 +33,3 @@
         mask-image: url('~/assets/img/icon/icon-accessible.svg');
     }
 }
-

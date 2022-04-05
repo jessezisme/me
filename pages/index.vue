@@ -23,9 +23,11 @@
         </section>
 
         <!-- projects -->
-        <section class="proj g-container-pad">
+        <section id="projects" class="proj g-container-pad">
             <div class="g-container">
-                <h2 class="g-m-0 g-mb-8 g-fs-4xl accent-heading">Side Projects</h2>
+                <div class="accent-heading_cont">
+                    <h2 class="g-m-0 g-mb-8 g-fs-4xl accent-heading">Side Projects</h2>
+                </div>
                 <p class="g-mb-16">A collection of some of my latest side projects completed outside of work for fun.</p>
             </div>
 
@@ -33,7 +35,7 @@
             <section class="proj_cont proj_pod-cont g-py-20">
                 <div class="g-container">
                     <ProjectFeature
-                        class="proj_feature proj_pod"
+                        class="proj_feature proj_pod g-anim-fade-in"
                         :link-live-url="'https://cryptic-meadow-43049.herokuapp.com'"
                         :link-code-url="'https://github.com/jessezisme/podcast-web-player'"
                         :tech-list="['HTML', 'CSS / SCSS', 'Vue.js', 'Webpack', 'Node.js']"
@@ -66,7 +68,7 @@
             <section class="proj_cont proj_2048-cont g-py-20">
                 <div class="g-container">
                     <ProjectFeature
-                        class="proj_feature proj_2048"
+                        class="proj_feature proj_2048 g-anim-fade-in"
                         :link-live-url="'https://2048ish.netlify.app/'"
                         :link-code-url="'https://github.com/jessezisme/2048-ish'"
                         :link-codepen-url="'https://codepen.io/jessezisme/pen/yKoRWq'"
@@ -91,9 +93,11 @@
         </section>
 
         <!-- About -->
-        <section class="ab g-mb-16">
+        <section id="about" class="ab g-mb-16">
             <div class="g-container">
-                <h2 class="g-m-0 g-mb-8 g-mt-20 g-fs-4xl accent-heading">About</h2>
+                <div class="accent-heading_cont">
+                    <h2 class="g-m-0 g-fs-4xl accent-heading">About</h2>
+                </div>
 
                 <div class="ab_grid">
                     <div class="ab_text-cont">
@@ -152,9 +156,11 @@
         </section>
 
         <!-- contact  -->
-        <section class="contact g-mb-16">
+        <section id="contact" class="contact g-mb-16">
             <div class="g-container">
-                <h2 class="g-m-0 g-mb-8 g-mt-20 g-fs-4xl accent-heading">Contact</h2>
+                <div class="accent-heading_cont">
+                    <h2 class="g-m-0 g-fs-4xl accent-heading">Contact</h2>
+                </div>
                 <div class="contact_grid">
                     <div class="contact_text">
                         <p class="g-m-0 g-mb-8">
@@ -204,36 +210,42 @@
             border-radius: 100%;
             background: black;
             margin-right: 15px;
-            background: linear-gradient(to right, #3ac490, #c33d70);
+            background: linear-gradient(to right, var(--c-primary-1), var(--c-primary-2));
         }
+    }
+    .accent-heading_cont {
+        padding: 2rem 0 1rem 0;
+        margin: 2rem 0 1rem 0;
+        position: relative;
+
+        // &::before {
+        //     content: '';
+        //     display: block;
+        //     height: 1px;
+        //     width: 100%;
+        //     position: absolute;
+        //     top: 0;
+        //     background: linear-gradient(to right, var(--c-primary-1), var(--c-primary-2));
+        // }
     }
 
     /*=============================================
     =            about            =
     =============================================*/
-    .ab {
-        // background: #0c271d;
-        // color: #fff;
-        // background: linear-gradient(135deg, #0c271d, #174f3a);
-    }
     .ab_grid {
         display: grid;
         grid-template-columns: 1fr;
         grid-gap: 30px;
     }
-    .ab_text-cont {
-        // max-width: 35em;
-    }
     .ab_card {
-        // padding: 30px;
-        background: linear-gradient(180deg, #f2f2f2, #e6e6e6);
+        background: linear-gradient(180deg, var(--c-grey-5), var(--c-grey-10));
         box-shadow: rgb(14 30 37 / 12%) 0px 2px 4px 0px, rgb(14 30 37 / 32%) 0px 2px 16px 0px;
-        border: 1px solid var(--color-acc-1-500);
+        border: 1px solid var(--c-primary-1-500);
 
         .g-icon {
             font-size: 1.75em;
             margin-bottom: 1rem;
-            background: linear-gradient(to right, #3ac490, #c33d70);
+            background: linear-gradient(to right, var(--c-primary-1), var(--c-primary-2));
         }
     }
     .ab_card-text {
@@ -279,17 +291,17 @@
         padding-bottom: clamp(150px, 18vh, 400px);
     }
     .intro .is-accent {
-        color: var(--color-text-link-1);
+        color: var(--c-text-link-1);
     }
     .intro .g-icon {
         font-size: 0.75em;
         vertical-align: baseline;
     }
     .intro .g-icon.is-accent {
-        background-color: var(--color-text-link-1);
+        background: var(--c-text-link-1);
 
         &.maple {
-            background-color: #c63a6f;
+            background: linear-gradient(to right, var(--c-primary-1), var(--c-primary-2));
         }
     }
     .intro_text-lead {
@@ -311,23 +323,17 @@
         max-width: 1100px;
         margin: auto;
         box-shadow: rgb(14 30 37 / 12%) 0px 2px 4px 0px, rgb(14 30 37 / 32%) 0px 2px 16px 0px;
-        color: #fff;
-        background: linear-gradient(to right, var(--color-grey-95), var(--color-grey-90), var(--color-grey-95));
-        color: #fff;
+        color: var(--c-text-1-inv);
+        background: linear-gradient(to right, var(--c-grey-95), var(--c-grey-90), var(--c-grey-95));
         padding: 30px 15px;
     }
     .proj_pod-cont {
         background: linear-gradient(to right, #24324f, #6c149a, #24324f);
     }
-    // .proj_pod {
-    //     background: #0c271d;
-    // }
+
     .proj_2048-cont {
         background: linear-gradient(to right, #2f1f42, #f5d1a5, #2f1f42);
     }
-    // .proj_2048 {
-    //     background: #0c271d;
-    // }
 
     @include media-breakpoint-up(sm) {
         .proj_feature {

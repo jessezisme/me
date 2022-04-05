@@ -134,7 +134,7 @@
     }
 
     .contact-form {
-        border: 5px solid var(--color-acc-1-600);
+        border: 5px solid var(--c-primary-1-600);
         border-radius: 8px;
     }
     .contact-form_row {
@@ -160,7 +160,7 @@
     input {
         display: inline-block;
         width: 100%;
-        border: 3px solid rgba(0, 0, 0, 0.6);
+        border: 3px solid var(--c-grey-90);
         padding: 15px 10px;
         outline: 0;
         background-color: transparent;
@@ -174,36 +174,36 @@
     textarea {
         &:hover,
         &:focus {
-            border-color: var(--color-acc-1-600);
+            border-color: var(--c-primary-1-600);
         }
         &:focus {
-            box-shadow: inset 0 0 1px 2px var(--color-acc-1-600);
+            box-shadow: inset 0 0 1px 2px var(--c-primary-1-600);
         }
     }
     textarea {
         min-height: 10em;
     }
     .contact_msg {
-        color: #000000;
+        color: var(--c-text-1);
         border-width: 4px;
         border-style: dotted;
         padding: 5px;
 
         &.is-success {
-            border-color: #0f742a;
+            border-color: var(--c-success-text);
         }
         &.is-error {
             border-color: red;
         }
     }
     .contact_btn-sub {
-        background: var(--color-acc-1-700);
-        color: var(--color-text-1-inv);
+        background: var(--c-primary-1-700);
+        color: var(--c-text-1-inv);
         transition: background 0.4s;
 
         &:hover,
         &:focus {
-            background: var(--color-acc-1-800);
+            background: var(--c-primary-1-800);
         }
     }
 </style>
