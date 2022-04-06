@@ -1,0 +1,22 @@
+
+# Default deploy preview settings:
+[context.deploy-preview]
+  command = "npm run generate:staging"
+
+# Branch deploy context:
+# All deploys that are not from a pull/merge request
+# or from the production branch will inherit these settings.
+[context.branch-deploy]
+  command = "npm run generate:production"
+
+# Production context:
+# All deploys from the main repository branch
+# will inherit these settings.
+[context.production]
+  command = "npm run generate:production"
+
+# Specific branch context:
+# Deploys from this branch will take these settings
+# and override their current ones.
+[context.staging]
+  command = "npm run generate:staging"

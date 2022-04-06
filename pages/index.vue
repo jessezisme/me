@@ -217,16 +217,6 @@
         padding: 2rem 0 1rem 0;
         margin: 2rem 0 1rem 0;
         position: relative;
-
-        // &::before {
-        //     content: '';
-        //     display: block;
-        //     height: 1px;
-        //     width: 100%;
-        //     position: absolute;
-        //     top: 0;
-        //     background: linear-gradient(to right, var(--c-primary-1), var(--c-primary-2));
-        // }
     }
 
     /*=============================================

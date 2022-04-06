@@ -25,6 +25,10 @@ export default {
         ],
     },
 
+    publicRuntimeConfig: {
+        DEPLOY_STAGE: process.env.DEPLOY_STAGE,
+    },
+
     // Global CSS: https://go.nuxtjs.dev/config-css
     css: ['~/assets/styles/main'],
 

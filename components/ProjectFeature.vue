@@ -126,7 +126,7 @@
         display: flex;
         flex-direction: column;
         padding: 30px;
-        background: var(--c-grey-10);
+        background: linear-gradient(to right, var(--c-grey-95), var(--c-grey-90), var(--c-grey-95));
         gap: 1.5rem;
     }
     .feat_cta-cont {
