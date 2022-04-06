@@ -30,6 +30,8 @@
                         <template v-if="isMobileMenuSize">
                             <button
                                 class="menu-btn menu-btn_rotate"
+                                aria-controls="header-mobile-overlay"
+                                :aria-expanded="isMobileMenuShown ? 'true' : 'false'"
                                 :class="{
                                     'is-open': isMobileMenuToggledOpen,
                                 }"
@@ -92,7 +94,7 @@
             leave-active-class="anim-slide-in--active"
             leave-to-class="anim-slide-in--from"
         >
-            <nav v-if="isMobileMenuShown" ref="header-mobile-overlay" class="header_over">
+            <nav v-show="isMobileMenuShown" id="header-mobile-overlay" ref="header-mobile-overlay" class="header_over">
                 <ul>
                     <li><a class="g-link" href="#projects" @click="toggleMobileMenu(false)">projects</a></li>
                     <li><a class="g-link" href="#about" @click="toggleMobileMenu(false)">about</a></li>

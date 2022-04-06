@@ -46,12 +46,12 @@
                 <button type="submit" class="contact_btn-sub">Send</button>
             </div>
             <div class="contact-form_row g-mt-2">
-                <span v-show="contactFormSuccessMsg.length > 0" role="alert" class="contact_msg is-success">
+                <div v-show="contactFormSuccessMsg.length > 0" role="alert" class="contact_msg is-success">
                     {{ contactFormSuccessMsg }}
-                </span>
-                <span v-show="contactFormErrorMsg.length > 0" role="alert" class="contact_msg is-error">
-                    {{ contactFormSuccessMsg }}
-                </span>
+                </div>
+                <div v-show="contactFormErrorMsg.length > 0" role="alert" class="contact_msg is-error">
+                    {{ contactFormErrorMsg }}
+                </div>
             </div>
         </form>
     </div>

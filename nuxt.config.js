@@ -1,28 +1,52 @@
+const headScript = [];
+const headSanitizerById = [];
+
+if (process.env.DEPLOY_STAGE === 'production') {
+    const googleAnalyticsScripts = [
+        {
+            src: 'https://www.googletagmanager.com/gtag/js?id=UA-71934346-1',
+            async: true,
+        },
+        {
+            hid: 'google-analytics-data',
+            innerHTML: `
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', 'UA-71934346-1');
+            `,
+        },
+    ];
+    headScript.push(...googleAnalyticsScripts);
+    headSanitizerById.push({
+        'google-analytics-data': ['innerHTML'],
+    });
+}
+
 export default {
     // Target: https://go.nuxtjs.dev/config-target
     target: 'static',
 
     // Global page headers: https://go.nuxtjs.dev/config-head
     head: {
-        title: 'Front-end Developer | Jesse Z',
+        title: 'Jesse Z | Front-end Developer',
         htmlAttrs: {
             lang: 'en',
         },
         meta: [
             { charset: 'utf-8' },
             { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-            { hid: 'description', name: 'description', content: '' },
+            {
+                hid: 'description',
+                name: 'description',
+                content: `Welcome to my personal front-end developer portfolio site.`,
+            },
             { name: 'format-detection', content: 'telephone=no' },
             { name: 'robots', content: 'noindex' },
         ],
-        link: [
-            { rel: 'icon', type: 'image/x-icon', href: '/favicon/favicon.ico' },
-            {
-                rel: 'preconnect',
-                href: 'https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&display=swap',
-                crossorigin: '',
-            },
-        ],
+        link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon/favicon.ico' }],
+        script: [...headScript],
+        __dangerouslyDisableSanitizersByTagID: { ...headSanitizerById },
     },
 
     publicRuntimeConfig: {
@@ -59,10 +83,10 @@ export default {
         baseURL: '/',
     },
 
-    // Build Configuration: https://go.nuxtjs.dev/config-build
-    build: {
-        styleResources: {
-            scss: '~/assets/styles/abstracts/_abstracts.scss',
-        },
+    styleResources: {
+        scss: '~/assets/styles/abstracts/_abstracts.scss',
     },
+
+    // Build Configuration: https://go.nuxtjs.dev/config-build
+    build: {},
 };

@@ -6,17 +6,17 @@
                 <div class="intro_text">
                     <h1 class="intro_text-lead g-mt-45--lg g-mt-12 g-mb-8 g-lh-xs g-fs-3xl g-fs-5xl--sm">
                         Hi. I'm <span class="is-accent">Jesse</span>, a
-                        <span class="is-accent">Front-end Developer</span> based in
+                        <span class="is-accent">front-end developer</span> based in
                         <span class="g-icon maple is-accent"></span> Vermont.
                     </h1>
                     <p class="intro_text-sub g-mb-4">
                         Thanks for stopping by. I've been building sites and applications for over 5 years. I'm particularly
-                        passionate about web accessibility and enjoy staying up to date on the latest technologies and
-                        paradigms.
+                        passionate about web accessibility and enjoy staying up to date on all the latest development tech.
                     </p>
                     <p class="intro_text-sub">
-                        While you're here, please feel free to learn more about me, check out some of my latest side
-                        projects, and contact me if you want to learn more.
+                        While you're here, please feel free to <a class="g-link" href="#about">learn more about me</a>, check
+                        out some of my latest <a class="g-link" href="#projects">side projects</a>, and
+                        <a class="g-link" href="#contact">contact me</a> if you want to learn more.
                     </p>
                 </div>
             </div>
@@ -110,8 +110,9 @@
                         </p>
                         <p class="g-mb-4">
                             I enjoy working on collaborative and innovative teams that are always looking for new ways to
-                            improve their processes. Although I'm not a designer, I have taken some design course and can
-                            always appreciate good color palettes, typography, and UI/UX experiences.
+                            improve their product. Although I'm not a designer, I have taken some design courses and can
+                            always appreciate good color palettes, typography, and UI<span aria-label="and">/</span>UX
+                            experiences.
                         </p>
                         <p class="g-mb-8">
                             When I'm not working, I'm usually watching sports (<span aria-label="basketball">🏀</span> and
@@ -125,7 +126,7 @@
                             </dl>
                             <dl>
                                 <dt>Up Next:</dt>
-                                <dd>GreenSock, an animation library</dd>
+                                <dd>Progressive Web Apps</dd>
                             </dl>
                         </div>
                     </div>
@@ -278,6 +279,7 @@
     =            intro            =
     =============================================*/
     .intro {
+        padding-bottom: 15vh;
         padding-bottom: clamp(150px, 18vh, 400px);
     }
     .intro .is-accent {
