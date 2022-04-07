@@ -1,39 +1,11 @@
-const headScript = [];
-const headSanitizerById = [];
-
-if (process.env.DEPLOY_STAGE === 'production') {
-    const googleAnalyticsScripts = [
-        {
-            src: 'https://www.googletagmanager.com/gtag/js?id=UA-71934346-1',
-            async: true,
-        },
-        {
-            hid: 'google-analytics-data',
-            innerHTML: `
-                window.dataLayer = window.dataLayer || [];
-                function gtag(){dataLayer.push(arguments);}
-                gtag('js', new Date());
-                gtag('config', 'UA-71934346-1');
-            `,
-        },
-    ];
-    headScript.push(...googleAnalyticsScripts);
-    headSanitizerById.push({
-        'google-analytics-data': ['innerHTML'],
-    });
-}
-
 export default {
     // Target: https://go.nuxtjs.dev/config-target
     target: 'static',
 
     // Global page headers: https://go.nuxtjs.dev/config-head
-    head: {
-        title: 'Jesse Z | Front-end Developer',
-        htmlAttrs: {
-            lang: 'en',
-        },
-        meta: [
+    head() {
+        const metaScript = [];
+        const metaData = [
             { charset: 'utf-8' },
             { name: 'viewport', content: 'width=device-width, initial-scale=1' },
             {
@@ -42,11 +14,40 @@ export default {
                 content: `Welcome to my personal front-end developer portfolio site.`,
             },
             { name: 'format-detection', content: 'telephone=no' },
-            { name: 'robots', content: 'noindex' },
-        ],
-        link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon/favicon.ico' }],
-        script: [...headScript],
-        __dangerouslyDisableSanitizersByTagID: { ...headSanitizerById },
+        ];
+        const metaSanitizerById = {};
+
+        if (process.env.DEPLOY_STAGE === 'production') {
+            const googleAnalyticsScripts = [
+                {
+                    src: 'https://www.googletagmanager.com/gtag/js?id=UA-71934346-1',
+                    async: true,
+                },
+                {
+                    hid: 'google-analytics-data',
+                    innerHTML: `
+                        window.dataLayer = window.dataLayer || [];
+                        function gtag(){dataLayer.push(arguments);}
+                        gtag('js', new Date());
+                        gtag('config', 'UA-71934346-1');
+                    `,
+                },
+            ];
+            metaScript.push(...googleAnalyticsScripts);
+            metaSanitizerById['google-analytics-data'] = ['innerHTML'];
+        } else if (process.env.DEPLOY_STAGE === 'staging') {
+            metaData.push({ name: 'robots', content: 'noindex' });
+        }
+
+        return {
+            title: 'Jesse Z | Front-end Developer',
+            htmlAttrs: {
+                lang: 'en',
+            },
+            meta: metaData,
+            script: metaScript,
+            __dangerouslyDisableSanitizersByTagID: metaSanitizerById,
+        };
     },
 
     publicRuntimeConfig: {
