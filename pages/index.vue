@@ -116,7 +116,7 @@
                         </p>
                         <p class="g-mb-8">
                             When I'm not working, I'm usually watching sports (<span aria-label="basketball">🏀</span> and
-                            <span aria-label="football">🏈</span>), or outside mountain biking and hiking outdoors
+                            <span aria-label="football">🏈</span>) or mountain biking and hiking outdoors
                             <span aria-hidden="true">🏔️</span>.
                         </p>
                         <div class="ab_learn g-fs-sm">
