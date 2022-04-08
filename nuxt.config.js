@@ -36,7 +36,7 @@ export default {
             metaScript.push(...googleAnalyticsScripts);
             metaSanitizerById['google-analytics-data'] = ['innerHTML'];
         } else if (process.env.DEPLOY_STAGE === 'staging') {
-            metaData.push({ name: 'robots', content: 'noindex' });
+            metaData.push({ name: 'robots', content: 'noindex, nofollow' });
         }
 
         return {

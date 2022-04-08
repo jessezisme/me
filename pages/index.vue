@@ -13,11 +13,19 @@
                         Thanks for stopping by. I've been building sites and applications for over 5 years. I'm particularly
                         passionate about web accessibility and enjoy staying up to date on all the latest development tech.
                     </p>
-                    <p class="intro_text-sub">
+                    <p class="intro_text-sub g-mb-4">
                         While you're here, please feel free to <a class="g-link" href="#about">learn more about me</a>, check
                         out some of my latest <a class="g-link" href="#projects">side projects</a>, and
-                        <a class="g-link" href="#contact">contact me</a> if you want to learn more.
+                        <a class="g-link" href="#contact">contact me</a> if you want to learn more. You can also find me on:
                     </p>
+                    <div class="intro_text-soc-links g-fs-xl">
+                        <a class="g-link" href="https://github.com/jessezisme" rel="noopener" target="_blank" title="GitHub">
+                            <span class="g-icon github"></span>GitHub</a
+                        >
+                        <a class="g-link" href="https://codepen.io/jessezisme" rel="noopener" target="_blank" title="Codepen"
+                            ><span class="g-icon codepen"></span>Codepen</a
+                        >
+                    </div>
                 </div>
             </div>
         </section>
@@ -31,7 +39,7 @@
                 <p class="g-mb-16">A collection of some of my latest side projects completed outside of work for fun.</p>
             </div>
 
-            <!-- Pod Nexus -->
+            <!-- pod nexus -->
             <section class="proj_cont proj_pod-cont g-py-20">
                 <div class="g-container">
                     <ProjectFeature
@@ -92,7 +100,7 @@
             </section>
         </section>
 
-        <!-- About -->
+        <!-- about -->
         <section id="about" class="ab g-mb-16">
             <div class="g-container">
                 <div class="accent-heading_cont">
@@ -171,12 +179,9 @@
                         <h3 class="contact_sub g-m-0 g-mb-4 g-fs-sm">Coding Socials</h3>
                         <p class="contact_soc">
                             All of my side projects can be found on
-                            <a class="g-link" href="https://github.com/jessezisme" rel="noopener" target="_blank">
-                                <span class="g-icon github"></span> GitHub</a
-                            >. I also occassionally post some small features to
-                            <a class="g-link" href="https://github.com/jessezisme" rel="noopener" target="_blank">
-                                <span class="g-icon codepen"></span> Codepen</a
-                            >
+                            <a class="g-link" href="https://github.com/jessezisme" rel="noopener" target="_blank" title="GitHub">GitHub</a>.
+                            I also occassionally post some small features to
+                            <a class="g-link" href="https://codepen.io/jessezisme" rel="noopener" target="_blank" title="Codepen">Codepen</a>
                             as well.
                         </p>
                     </div>
@@ -285,9 +290,8 @@
     .intro .is-accent {
         color: var(--c-text-link-1);
     }
-    .intro .g-icon {
+    .intro .g-icon.maple {
         font-size: 0.75em;
-        vertical-align: baseline;
     }
     .intro .g-icon.is-accent {
         background: var(--c-text-link-1);
@@ -301,6 +305,11 @@
     }
     .intro_text-sub {
         max-width: 45em;
+    }
+    .intro_text-soc-links {
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
     }
     /*=====  End of intro  ======*/
 

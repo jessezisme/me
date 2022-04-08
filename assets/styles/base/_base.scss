@@ -86,11 +86,11 @@ a {
     text-decoration: none;
 
     &.g-link:not(.icon) {
-        display: inline-block;
+        display: inline-flex;
+        align-items: center;
         position: relative;
         overflow: hidden;
         transition: transform 1s ease-out;
-        vertical-align: bottom;
         box-shadow: inset 0px -2px 0px 0px var(--c-text-link-1);
         padding-bottom: 1px;
 
@@ -110,6 +110,9 @@ a {
         &:hover::before {
             transform: none;
         }
+    }
+    &.g-link .g-icon {
+        margin-right: 5px;
     }
 }
 

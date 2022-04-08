@@ -7,11 +7,11 @@
                     <a class="g-link" href="https://github.com/jessezisme/me" rel="noopener">Source Code on Github</a>
                 </div>
                 <div class="footer_links">
-                    <a href="https://github.com/jessezisme/me" rel="noopener"
-                        ><span class="g-icon github" title="GitHub"><span class="g-sr-only">Github</span></span></a
+                    <a href="https://github.com/jessezisme/me" rel="noopener" title="GitHub"
+                        ><span class="g-icon github"><span class="g-sr-only">Github</span></span></a
                     >
-                    <a href="https://github.com/jessezisme/me" rel="noopener"
-                        ><span class="g-icon codepen" title="Codepen"><span class="g-sr-only">Codepen</span></span></a
+                    <a href="https://codepen.io/jessezisme" rel="noopener" title="Codepen"
+                        ><span class="g-icon codepen"><span class="g-sr-only">Codepen</span></span></a
                     >
                 </div>
             </div>
