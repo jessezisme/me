@@ -99,7 +99,7 @@
 }
 .g-pl {
     @include convert-sass-map($spacing) using ($value) {
-        padding-bottom: $value;
+        padding-left: $value;
     }
 }
 
@@ -138,7 +138,7 @@
 }
 .g-ml {
     @include convert-sass-map($spacing) using ($value) {
-        margin-bottom: $value;
+        margin-left: $value;
     }
 }
 
