@@ -46,7 +46,7 @@
                         class="proj_feature proj_pod g-anim-fade-in"
                         :link-live-url="'https://cryptic-meadow-43049.herokuapp.com'"
                         :link-code-url="'https://github.com/jessezisme/podcast-web-player'"
-                        :tech-list="['HTML', 'CSS / SCSS', 'Vue.js', 'Webpack', 'Node.js']"
+                        :tech-list="['CSS/SCSS', 'Vue.js', 'Webpack', 'Node.js', 'HTML']"
                     >
                         <template #title>
                             <h3 class="g-fs-3xl">Pod Nexus</h3>
@@ -81,7 +81,7 @@
                         :link-code-url="'https://github.com/jessezisme/2048-ish'"
                         :link-codepen-url="'https://codepen.io/jessezisme/pen/yKoRWq'"
                         :link-codepen-text="'Codepen (over 7,000 views)'"
-                        :tech-list="['HTML', 'CSS / SCSS', 'JavaScript', 'Webpack', 'Netlify']"
+                        :tech-list="['CSS/SCSS', 'JavaScript', 'Webpack', 'Netlify', 'HTML']"
                     >
                         <template #title>
                             <h3 class="g-fs-3xl">2048-ish</h3>
@@ -94,6 +94,32 @@
                         </template>
                         <template #graphic>
                             <img src="~/assets/img/home/2048-iphone.png" alt="Screenshot of 2048 project" loading="lazy" />
+                        </template>
+                    </ProjectFeature>
+                </div>
+            </section>
+
+            <!-- Farmers Market -->
+            <section class="proj_cont proj_farm-cont g-py-20">
+                <div class="g-container">
+                    <ProjectFeature
+                        class="proj_feature proj_farm g-anim-fade-in"
+                        :link-live-url="'https://findfarmersmarkets.netlify.app/'"
+                        :link-code-url="'https://github.com/jessezisme/farmers-markets'"
+                        :tech-list="['TypeScript', 'Vue.js', 'CSS/SCSS', 'Nuxt', 'Netlify']"
+                    >
+                        <template #title>
+                            <h3 class="g-fs-3xl">Find Farmers Markets</h3>
+                        </template>
+                        <template #body>
+                            <p>Search for local farmers markets in your area using the USDA's Farmers Market API.</p>
+                        </template>
+                        <template #graphic>
+                            <img
+                                src="~/assets/img/home/farmers-market.png"
+                                alt="Screenshot of search page for farmers market project"
+                                loading="lazy"
+                            />
                         </template>
                     </ProjectFeature>
                 </div>
@@ -179,9 +205,22 @@
                         <h3 class="contact_sub g-m-0 g-mb-4 g-fs-sm">Coding Socials</h3>
                         <p class="contact_soc">
                             All of my side projects can be found on
-                            <a class="g-link" href="https://github.com/jessezisme" rel="noopener" target="_blank" title="GitHub">GitHub</a>.
-                            I also occassionally post some small features to
-                            <a class="g-link" href="https://codepen.io/jessezisme" rel="noopener" target="_blank" title="Codepen">Codepen</a>
+                            <a
+                                class="g-link"
+                                href="https://github.com/jessezisme"
+                                rel="noopener"
+                                target="_blank"
+                                title="GitHub"
+                                >GitHub</a
+                            >. I also occassionally post some small features to
+                            <a
+                                class="g-link"
+                                href="https://codepen.io/jessezisme"
+                                rel="noopener"
+                                target="_blank"
+                                title="Codepen"
+                                >Codepen</a
+                            >
                             as well.
                         </p>
                     </div>
@@ -321,7 +360,8 @@
         font-weight: bold;
     }
     .proj_feature {
-        max-width: 1100px;
+        width: 100%;
+        max-width: 1300px;
         margin: auto;
         box-shadow: rgb(14 30 37 / 12%) 0px 2px 4px 0px, rgb(14 30 37 / 32%) 0px 2px 16px 0px;
         color: var(--c-text-1-inv);
@@ -331,9 +371,11 @@
     .proj_pod-cont {
         background: linear-gradient(to right, #24324f, #6c149a, #24324f);
     }
-
     .proj_2048-cont {
         background: linear-gradient(to right, #2f1f42, #f5d1a5, #2f1f42);
+    }
+    .proj_farm-cont {
+        background: linear-gradient(to right, #2b3201, #f7fecd, #2b3201);
     }
 
     @include media-breakpoint-up(sm) {
