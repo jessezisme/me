@@ -355,40 +355,41 @@
     /*=============================================
     =            project            =
     =============================================*/
-    .proj_note {
-        font-style: italic;
-        font-weight: bold;
-    }
-    .proj_feature {
-        width: 100%;
-        max-width: 1300px;
-        margin: auto;
-        box-shadow: rgb(14 30 37 / 12%) 0px 2px 4px 0px, rgb(14 30 37 / 32%) 0px 2px 16px 0px;
-        color: var(--c-text-1-inv);
-        background: linear-gradient(to right, var(--c-grey-95), var(--c-grey-90), var(--c-grey-95));
-        padding: 30px 15px;
-    }
-    .proj_pod-cont {
-        background: linear-gradient(to right, #24324f, #6c149a, #24324f);
-    }
-    .proj_2048-cont {
-        background: linear-gradient(to right, #2f1f42, #f5d1a5, #2f1f42);
-    }
-    .proj_farm-cont {
-        background: linear-gradient(to right, #2b3201, #f7fecd, #2b3201);
-    }
-
-    @include media-breakpoint-up(sm) {
+    .proj {
+        .proj_note {
+            font-style: italic;
+            font-weight: bold;
+        }
         .proj_feature {
-            padding: 45px;
+            width: 100%;
+            max-width: 1300px;
+            margin: auto;
+            box-shadow: rgb(14 30 37 / 12%) 0px 2px 4px 0px, rgb(14 30 37 / 32%) 0px 2px 16px 0px;
+            color: var(--c-text-1-inv);
+            background: linear-gradient(to right, var(--c-grey-95), var(--c-grey-90), var(--c-grey-95));
+            padding: 30px 15px;
+        }
+        .proj_pod-cont {
+            background: linear-gradient(to right, #24324f, #6c149a, #24324f);
+        }
+        .proj_2048-cont {
+            background: linear-gradient(to right, #2f1f42, #f5d1a5, #2f1f42);
+        }
+        .proj_farm-cont {
+            background: linear-gradient(to right, #2b3201, #f7fecd, #2b3201);
+        }
+
+        @include media-breakpoint-up(sm) {
+            .proj_feature {
+                padding: 45px;
+            }
+        }
+        @include media-breakpoint-up(md) {
+            .proj_feature {
+                padding: 60px;
+            }
         }
     }
-    @include media-breakpoint-up(md) {
-        .proj_feature {
-            padding: 60px;
-        }
-    }
-
     /*=====  End of project  ======*/
 
     /*=============================================
