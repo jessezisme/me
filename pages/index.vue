@@ -44,7 +44,7 @@
                 <div class="g-container">
                     <ProjectFeature
                         class="proj_feature proj_pod g-anim-fade-in"
-                        :link-live-url="'https://cryptic-meadow-43049.herokuapp.com'"
+                        :link-live-url="'https://podcast-web-player.onrender.com'"
                         :link-code-url="'https://github.com/jessezisme/podcast-web-player'"
                         :tech-list="['CSS/SCSS', 'Vue.js', 'Webpack', 'Node.js', 'HTML']"
                     >
