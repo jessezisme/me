@@ -44,9 +44,9 @@
                 <div class="g-container">
                     <ProjectFeature
                         class="proj_feature proj_pod g-anim-fade-in"
-                        :link-live-url="'https://podcast-web-player.onrender.com'"
+                        :link-live-url="'https://podcast-web-player.netlify.app/'"
                         :link-code-url="'https://github.com/jessezisme/podcast-web-player'"
-                        :tech-list="['CSS/SCSS', 'Vue.js', 'Webpack', 'Node.js', 'HTML']"
+                        :tech-list="['Vue.js', 'TypeScript', 'Tailwind CSS', 'Nuxt']"
                     >
                         <template #title>
                             <h3 class="g-fs-3xl">Pod Nexus</h3>
@@ -153,16 +153,6 @@
                             <span aria-label="football">🏈</span>) or mountain biking and hiking outdoors
                             <span aria-hidden="true">🏔️</span>.
                         </p>
-                        <div class="ab_learn g-fs-sm">
-                            <dl>
-                                <dt>Currently Learning:</dt>
-                                <dd>Nuxt, a Vue.js framework</dd>
-                            </dl>
-                            <dl>
-                                <dt>Up Next:</dt>
-                                <dd>Progressive Web Apps</dd>
-                            </dl>
-                        </div>
                     </div>
                     <div class="ab_card-cont">
                         <div class="ab_card g-mb-6 g-p-4 g-p-8--sm">
