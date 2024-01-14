@@ -1,0 +1,22 @@
+@import './_typography.scss';
+@import './_links.scss';
+@import './icon.scss';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+  scroll-behavior: smooth;
+}
+
+@layer base {
+  .container {
+    width: 100%;
+    max-width: 1300px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 1rem;
+  }
+}
