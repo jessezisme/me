@@ -7,10 +7,24 @@
     <div class="grid grid-cols-1 md:grid-cols-[6fr_4fr] gap-[2rem]">
       <div>
         <h1 class="my-[1rem] h1 font-black lead">I'm Jesse, a front-end developer based in Vermont.</h1>
-        <p class="max-w-[35em] h6 font-normal">
-          Thanks for stopping by. While you're here, please feel free to learn more about me, check out some of my latest
-          side projects, and contact me if you want to learn more. You can also find me on:
-        </p>
+        <div class="max-w-[35em] h6 font-normal">
+          <p class="mb-4">
+            Thanks for stopping by. While you're here, please feel free to
+            <NuxtLink to="#about">learn more about me</NuxtLink>, check out some of my latest
+            <NuxtLink to="#projects">side projects</NuxtLink>, and <NuxtLink to="#contact">contact me</NuxtLink> if you want
+            to learn more. You can also find me on:
+          </p>
+          <div class="mb-2">
+            <NuxtLink to="https://github.com/jessezisme" target="_blank" class="inline-flex items-center gap-2">
+              <Icon name="mdi:github" aria-hidden="true" /> GitHub
+            </NuxtLink>
+          </div>
+          <div class="mb-2">
+            <NuxtLink to="https://codepen.io/jessezisme" target="_blank" class="inline-flex items-center gap-2">
+              <Icon name="mdi:codepen" aria-hidden="true" /> Codepen
+            </NuxtLink>
+          </div>
+        </div>
       </div>
       <div>
         <NuxtPicture
@@ -42,14 +56,19 @@
       <template #body>
         <p class="mb-4">
           Listen to all your favorite podcasts with Pod Nexus, a fun demo project I built primarily to learn Vue and Nuxt.
-          Users can sign via GitHub and subscribe to podcasts. Authentication and SQL database utilizes Supabase.
+          Users can sign-in via GitHub and subscribe to podcasts. Authentication and SQL database utilizes Supabase.
         </p>
         <div class="flex flex-col gap-4 mb-6 items-start">
-          <a href="https://podcast-web-player.netlify.app/" rel="nofollow" class="inline-flex items-center gap-2">
-            <Icon name="material-symbols:link" /> Live Link
+          <a
+            href="https://podcast-web-player.netlify.app/"
+            target="_blank"
+            rel="nofollow"
+            class="inline-flex items-center gap-2"
+          >
+            <Icon name="material-symbols:link" aria-hidden="true" /> Live Link
           </a>
-          <a href="https://github.com/jessezisme/podcast-web-player" class="inline-flex items-center gap-2">
-            <Icon name="mdi:github" /> Code on GitHub
+          <a href="https://github.com/jessezisme/podcast-web-player" target="_blank" class="inline-flex items-center gap-2">
+            <Icon name="mdi:github" aria-hidden="true" /> Code on GitHub
           </a>
         </div>
       </template>
@@ -73,14 +92,14 @@
           A complete re-build of the popular 2048 game, a sliding block puzzle game. It can be pretty addicting.
         </p>
         <div class="flex flex-col gap-4 mb-6 items-start">
-          <a href="https://2048ish.netlify.app/" class="inline-flex items-center gap-2">
-            <Icon name="material-symbols:link" /> Live Link
+          <a href="https://2048ish.netlify.app/" target="_blank" class="inline-flex items-center gap-2">
+            <Icon name="material-symbols:link" aria-hidden="true" /> Live Link
           </a>
-          <a href="https://codepen.io/jessezisme/pen/yKoRWq" class="inline-flex items-center gap-2">
-            <Icon name="mdi:codepen" /> Codepen
+          <a href="https://codepen.io/jessezisme/pen/yKoRWq" target="_blank" class="inline-flex items-center gap-2">
+            <Icon name="mdi:codepen" aria-hidden="true" /> Codepen
           </a>
-          <a href="https://github.com/jessezisme/2048-ish" class="inline-flex items-center gap-2">
-            <Icon name="mdi:github" /> Code on GitHub
+          <a href="https://github.com/jessezisme/2048-ish" target="_blank" class="inline-flex items-center gap-2">
+            <Icon name="mdi:github" aria-hidden="true" /> Code on GitHub
           </a>
         </div>
       </template>
@@ -102,11 +121,11 @@
       <template #body>
         <p class="mb-4">Search for local farmers markets in your area using the USDA's Farmers Market API.</p>
         <div class="flex flex-col gap-4 mb-6 items-start">
-          <a href="https://findfarmersmarkets.netlify.app/" class="inline-flex items-center gap-2">
-            <Icon name="material-symbols:link" /> Live Link
+          <a href="https://findfarmersmarkets.netlify.app/" target="_blank" class="inline-flex items-center gap-2">
+            <Icon name="material-symbols:link" aria-hidden="true" /> Live Link
           </a>
-          <a href="https://github.com/jessezisme/farmers-markets" class="inline-flex items-center gap-2">
-            <Icon name="mdi:github" /> Code on GitHub
+          <a href="https://github.com/jessezisme/farmers-markets" target="_blank" class="inline-flex items-center gap-2">
+            <Icon name="mdi:github" aria-hidden="true" /> Code on GitHub
           </a>
         </div>
       </template>
@@ -148,25 +167,25 @@
           <div class="border-[1px] border-white/20 p-6 rounded-md bg-gradient-to-br from-brand6/95 to-brand6/100">
             <h3 class="h4 border-b-[1px] border-b-brand1 mb-4">Skills</h3>
             <ul class="custom-list">
-              <li v-for="item in skills">{{ item }}</li>
+              <li v-for="item in skills" :key="item">{{ item }}</li>
             </ul>
           </div>
           <div class="border-[1px] border-white/20 p-6 rounded-md bg-gradient-to-br from-brand6/95 to-brand6/100">
             <h3 class="h4 border-b-[1px] border-b-brand1 mb-4">Languages</h3>
             <ul class="custom-list">
-              <li v-for="item in languages">{{ item }}</li>
+              <li v-for="item in languages" :key="item">{{ item }}</li>
             </ul>
           </div>
           <div class="border-[1px] border-white/20 p-6 rounded-md bg-gradient-to-br from-brand6/95 to-brand6/100">
             <h3 class="h4 border-b-[1px] border-b-brand1 mb-4">Frameworks</h3>
             <ul class="custom-list">
-              <li v-for="item in frameworks">{{ item }}</li>
+              <li v-for="item in frameworks" :key="item">{{ item }}</li>
             </ul>
           </div>
           <div class="border-[1px] border-white/20 p-6 rounded-md bg-gradient-to-br from-brand6/95 to-brand6/100">
             <h3 class="h4 border-b-[1px] border-b-brand1 mb-4">Tools</h3>
             <ul class="custom-list">
-              <li v-for="item in tools">{{ item }}</li>
+              <li v-for="item in tools" :key="item">{{ item }}</li>
             </ul>
           </div>
         </div>
