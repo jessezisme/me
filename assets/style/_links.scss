@@ -1,0 +1,12 @@
+@layer base {
+  a {
+    @apply cursor-pointer;
+  }
+  a:not(.reset) {
+    @apply font-bold inline-flex italic;
+    box-shadow: inset 0 -2px 0 0 theme('colors.link-accent');
+    &:hover {
+      box-shadow: inset 0 -2px 0 0 theme('colors.link-accent-hover');
+    }
+  }
+}

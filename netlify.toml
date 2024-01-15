@@ -20,3 +20,4 @@
 # and override their current ones.
 [context.staging]
   command = "npm run generate:staging"
+  
