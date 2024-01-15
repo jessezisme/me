@@ -53,16 +53,16 @@ useHead({
     if (config.public.DEPLOY_STAGE === 'production') {
       getScripts.push({
         key: 'script-gtag',
-        src: 'https://www.googletagmanager.com/gtag/js?id=UA-71934346-1',
+        src: 'https://www.googletagmanager.com/gtag/js?id=G-YHFVW6R2BK',
         async: true,
       });
       getScripts.push({
         innerHTML: `
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'UA-71934346-1');
-          `,
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-YHFVW6R2BK');
+        `,
       });
     }
     return getScripts;
