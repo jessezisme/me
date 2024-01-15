@@ -1,4 +1,5 @@
 <template>
+  <!-- Intro -->
   <section class="container py-[6rem]">
     <span class="inline-flex px-[.5rem] py-[.25rem] h3 font-extrabold bg-brand5 text-body-inv rounded-md tracking-widest"
       >Hi.</span
@@ -6,15 +7,19 @@
     <div class="grid grid-cols-1 md:grid-cols-[6fr_4fr] gap-[2rem]">
       <div>
         <h1 class="my-[1rem] h1 font-black lead">I'm Jesse, a front-end developer based in Vermont.</h1>
-        <p class="max-w-[35em] h6">
+        <p class="max-w-[35em] h6 font-normal">
           Thanks for stopping by. While you're here, please feel free to learn more about me, check out some of my latest
           side projects, and contact me if you want to learn more. You can also find me on:
         </p>
       </div>
       <div>
-        <img
-          src="https://images.unsplash.com/photo-1531101930610-1b86e66d5fd7?q=80&w=5070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-          class="rounded-2xl max-w-[80%] md:max-w-full sepia-[65%] border-8 border-black"
+        <NuxtPicture
+          src="/assets/images/home/home-vermont.jpg"
+          class="aspect-video block w-full rounded-lg max-w-[80%] md:max-w-full sepia-[65%] border-8 border-black"
+          alt="Vermont landscape."
+          sizes="100vw md:600px"
+          preload
+          :imgAttrs="{ id: 'my-id', class: 'w-full h-full object-cover' }"
         />
       </div>
     </div>
@@ -22,13 +27,14 @@
 
   <AccentSeparator class="h-[150px]" />
 
-  <section class="container py-[6rem]">
+  <!-- Projects -->
+  <section id="projects" class="container py-[6rem]">
     <h2 class="font-extrabold mb-6 h2">Side Projects</h2>
     <p>A collection of some of my latest side projects completed outside of work for fun.</p>
 
     <ProjectFeature
       :tech="['TypeScript', 'Vue', 'Nuxt', 'Tailwind CSS', 'Supabase', 'SQL']"
-      class="p-[3rem_2.5rem] my-[4rem] bg-neutral-100"
+      class="p-[3rem_2.5rem] my-[4rem] bg-neutral-50"
     >
       <template #title>
         <h3 class="h3 font-extrabold mb-4">Pod Nexus</h3>
@@ -52,11 +58,13 @@
           src="/assets/images/home/pod-nexus.png"
           class="flex items-center justify-center w-full h-full max-w-full max-h-full"
           alt="Pod Nexus screenshot."
+          sizes="100vw md:400px"
+          loading="lazy"
         />
       </template>
     </ProjectFeature>
 
-    <ProjectFeature :tech="['CSS/SCSS', 'JavaScript', 'Nuxt', 'Webpack']" class="p-[3rem_2.5rem] my-[4rem] bg-neutral-100">
+    <ProjectFeature :tech="['CSS/SCSS', 'JavaScript', 'Webpack']" class="p-[3rem_2.5rem] my-[4rem] bg-neutral-50">
       <template #title>
         <h3 class="h3 font-extrabold mb-4">2048-ish</h3>
       </template>
@@ -81,11 +89,13 @@
           src="/assets/images/home/2048-iphone.png"
           class="flex items-center justify-center w-full h-full max-w-full max-h-full"
           alt="2048-ish screenshot."
+          sizes="100vw md:400px"
+          loading="lazy"
         />
       </template>
     </ProjectFeature>
 
-    <ProjectFeature :tech="['TypeScript', 'Vue', 'Nuxt', 'CSS/SCSS']" class="p-[3rem_2.5rem] my-[4rem] bg-neutral-100">
+    <ProjectFeature :tech="['TypeScript', 'Vue', 'Nuxt', 'CSS/SCSS']" class="p-[3rem_2.5rem] my-[4rem] bg-neutral-50">
       <template #title>
         <h3 class="h3 font-extrabold mb-4">Farmers' Markets</h3>
       </template>
@@ -105,16 +115,19 @@
           src="/assets/images/home/farmers-markets.png"
           class="flex items-center justify-center w-full h-full max-w-full max-h-full"
           alt="Farmers Market screenshot."
+          sizes="100vw md:400px"
+          loading="lazy"
         />
       </template>
     </ProjectFeature>
   </section>
 
-  <section class="py-[6rem] bg-[rgb(53,_53,_53)] text-body-inv">
+  <!-- About -->
+  <section id="about" class="py-[6rem] text-body-inv bg-gradient-to-br from-brand6 to-brand6">
     <div class="container">
-      <h2 class="h2 mb-6 text-center">About</h2>
-      <div>
-        <div>
+      <h2 class="h2 mb-6">About</h2>
+      <div class="grid grid-cols-[1fr] md:grid-cols-[1fr,1fr] gap-8">
+        <div class="text-lg">
           <p class="mb-4">
             I initially began coding as a fun hobby, enjoying the mixture of logic and creativity and seeing your ideas
             deployed live on the web. This led me to change careers and attend a full&hyphen;time developer training program
@@ -131,12 +144,52 @@
             <span aria-label="football">🏈</span>) or mountain biking and hiking outdoors <span aria-hidden="true">🏔️</span>.
           </p>
         </div>
+        <div class="grid grid-cols-[1fr] sm:grid-cols-[1fr,1fr] md:grid-cols-[1fr] gap-6">
+          <div class="border-[1px] border-white/20 p-6 rounded-md bg-gradient-to-br from-brand6/95 to-brand6/100">
+            <h3 class="h4 border-b-[1px] border-b-brand1 mb-4">Skills</h3>
+            <ul class="custom-list">
+              <li v-for="item in skills">{{ item }}</li>
+            </ul>
+          </div>
+          <div class="border-[1px] border-white/20 p-6 rounded-md bg-gradient-to-br from-brand6/95 to-brand6/100">
+            <h3 class="h4 border-b-[1px] border-b-brand1 mb-4">Languages</h3>
+            <ul class="custom-list">
+              <li v-for="item in languages">{{ item }}</li>
+            </ul>
+          </div>
+          <div class="border-[1px] border-white/20 p-6 rounded-md bg-gradient-to-br from-brand6/95 to-brand6/100">
+            <h3 class="h4 border-b-[1px] border-b-brand1 mb-4">Frameworks</h3>
+            <ul class="custom-list">
+              <li v-for="item in frameworks">{{ item }}</li>
+            </ul>
+          </div>
+          <div class="border-[1px] border-white/20 p-6 rounded-md bg-gradient-to-br from-brand6/95 to-brand6/100">
+            <h3 class="h4 border-b-[1px] border-b-brand1 mb-4">Tools</h3>
+            <ul class="custom-list">
+              <li v-for="item in tools">{{ item }}</li>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <section>
-    <ContactForm />
+  <!-- Contact -->
+  <section id="contact" class="py-[6rem]">
+    <div class="container">
+      <h2 class="h2 mb-6">Contact</h2>
+      <div class="grid grid-cols-[1fr] md:grid-cols-[2fr_3fr] gap-[4rem]">
+        <div>
+          <p class="text-lg">
+            I'm always interested in discussing new projects and opportunities. Feel free to send me a message, and I'll get
+            back to you as soon as I can.
+          </p>
+        </div>
+        <div>
+          <ContactForm class="max-w-full" />
+        </div>
+      </div>
+    </div>
   </section>
 </template>
 
@@ -144,4 +197,37 @@
 picture :deep(img) {
   @apply max-h-full max-w-full;
 }
+.custom-list {
+  @apply flex flex-wrap gap-2;
+
+  li {
+    @apply text-body-inv-v1 before:content-['\2022'] before:relative before:inline-flex before:pr-[5px];
+  }
+}
 </style>
+
+<script setup lang="ts">
+const skills = [
+  'Front-end Development',
+  'Technical SEO',
+  'Accessibility Audits',
+  'Web Content Accessibility Guidelines (WCAG)',
+];
+const languages = ['JavaScript', 'TypeScript', 'CSS, SASS, SCSS, LESS', 'HTML', 'SQL'];
+const frameworks = ['Vue.js', 'Angular', 'jQuery', 'Knockout.js', 'Nuxt', 'Bootstrap', 'Tailwind', 'Jest'];
+const tools = [
+  'Node.js',
+  'Git',
+  'GitHub',
+  'Jira',
+  'Adobe Photoshop',
+  'Figma',
+  'WordPress',
+  'Webpack',
+  'Google Search Console',
+  'Vite',
+  'Gulp.js',
+  'Oracle Commerce Cloud',
+  'Oracle Responsys',
+];
+</script>

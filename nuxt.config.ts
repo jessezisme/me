@@ -2,6 +2,11 @@
 export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: ['nuxt-icon', '@nuxt/image'],
+  runtimeConfig: {
+    public: {
+      DEPLOY_STAGE: process.env.DEPLOY_STAGE,
+    },
+  },
   css: ['~/assets/style/main.scss'],
   postcss: {
     plugins: {

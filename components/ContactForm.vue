@@ -1,5 +1,5 @@
 <template>
-  <div class="contact-form_cont">
+  <div>
     <form
       ref="contactFormElement"
       :class="{
@@ -16,16 +16,32 @@
         <!-- used by netlify to detect form, will break without it -->
         <input type="hidden" name="form-name" value="contact" aria-label="ignore" />
       </div>
-      <div class="contact-form_row">
-        <label :for="`name-${uuid}`" class="inline-block mb-4 text-base font-bold">Your Name: </label>
-        <input :id="`name-${uuid}`" ref="name" v-model.trim="contactFormName" type="text" name="name" required />
+      <div class="my-2">
+        <label :for="`name-${uuid}`" class="block mb-4 text-base font-bold">Your Name: </label>
+        <input
+          :id="`name-${uuid}`"
+          class="w-full p-4 border-2 border-black"
+          ref="name"
+          v-model.trim="contactFormName"
+          type="text"
+          name="name"
+          required
+        />
       </div>
-      <div class="contact-form_row">
-        <label :for="`email-${uuid}`" class="inline-block mb-4 text-base font-bold">Your Email: </label>
-        <input :id="`email-${uuid}`" ref="email" v-model.trim="contactFormEmail" type="email" name="email" required />
+      <div class="my-2">
+        <label :for="`email-${uuid}`" class="block mb-4 text-base font-bold">Your Email: </label>
+        <input
+          :id="`email-${uuid}`"
+          class="w-full p-4 border-2 border-black"
+          ref="email"
+          v-model.trim="contactFormEmail"
+          type="email"
+          name="email"
+          required
+        />
       </div>
-      <div class="contact-form_row">
-        <label :for="`message-${uuid}`" class="inline-block mb-4 text-base font-bold">Message: </label>
+      <div class="my-2">
+        <label :for="`message-${uuid}`" class="block mb-4 text-base font-bold">Message: </label>
         <textarea
           :id="`message-${uuid}`"
           ref="message"
@@ -33,25 +49,37 @@
           name="message"
           maxlength="2500"
           required
-          class="min-h-[10em]"
+          class="min-h-[10em] w-full p-4 border-2 border-black"
         ></textarea>
       </div>
-      <div class="contact-form_row g-m-0">
-        <button type="submit" class="w-[200px] max-w-full inline-flex justify-center rounded-md bg-brand5 text-body-inv">
+      <div class="my-2">
+        <button type="submit" class="w-full max-w-full inline-flex justify-center rounded-md bg-brand5 text-body-inv p-4">
           Send
         </button>
       </div>
-      <div class="contact-form_row g-mt-2">
-        <div v-show="contactFormSuccessMsg.length > 0" role="alert" class="contact_msg is-success">
+      <div class="my-2">
+        <div v-show="contactFormSuccessMsg.length" role="alert" class="text-emerald-800">
           {{ contactFormSuccessMsg }}
         </div>
-        <div v-show="contactFormErrorMsg.length > 0" role="alert" class="contact_msg is-error">
+        <div v-show="contactFormErrorMsg.length" role="alert" class="text-red-800">
           {{ contactFormErrorMsg }}
         </div>
       </div>
     </form>
   </div>
 </template>
+
+<style lang="scss" scoped>
+form {
+  transition-property: filter, opacity;
+  transition-duration: 0.4s;
+
+  &.is-disabled {
+    filter: blur(0.25em);
+    opacity: 0.85;
+  }
+}
+</style>
 
 <script setup lang="ts">
 import { v4 as uuidv4 } from 'uuid';
@@ -115,69 +143,3 @@ onMounted(() => {
   uuid.value = uuidv4();
 });
 </script>
-
-<style lang="scss" scoped>
-form {
-  transition-property: filter, opacity;
-  transition-duration: 0.4s;
-
-  &.is-disabled {
-    filter: blur(0.25em);
-    opacity: 0.85;
-  }
-}
-
-button,
-textarea,
-input {
-  // display: inline-block;
-  // width: 100%;
-  // border: 3px solid var(--c-grey-90);
-  // padding: 15px 10px;
-  // outline: 0;
-  // // background-color: transparent;
-  // transition: 0.3s border;
-  // border-radius: 3px;
-  // appearance: none;
-  // transition: border, box-shadow;
-  // transition-duration: 0.4s;
-}
-
-input,
-textarea {
-  &:hover,
-  &:focus {
-    border-color: var(--c-primary-1-600);
-  }
-
-  &:focus {
-    box-shadow: inset 0 0 1px 2px var(--c-primary-1-600);
-  }
-}
-
-.contact_msg {
-  color: var(--c-text-1);
-  border-width: 4px;
-  border-style: dotted;
-  padding: 5px;
-
-  &.is-success {
-    border-color: var(--c-success-text);
-  }
-
-  &.is-error {
-    border-color: red;
-  }
-}
-
-.contact_btn-sub {
-  // background: var(--c-primary-1-700);
-  // color: var(--c-text-1-inv);
-  // transition: background 0.4s;
-
-  // &:hover,
-  // &:focus {
-  //   background: var(--c-primary-1-800);
-  // }
-}
-</style>

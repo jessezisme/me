@@ -8,6 +8,7 @@ const brandColors = () => ({
   brand3: '#d42527',
   brand4: '#a01d42',
   brand5: '#73284e',
+  brand6: '#12292b',
 });
 
 export default {
