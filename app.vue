@@ -15,6 +15,7 @@
     <main class="grow">
       <NuxtPage />
     </main>
+    <TheFooter />
   </div>
 </template>
 

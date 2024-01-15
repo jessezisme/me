@@ -4,9 +4,15 @@
       <ul
         class="inline-flex items-start py-2 px-4 gap-8 rounded-b-lg rounded-lg text-body-inv shadow-lg bg-brand6 border-2 border-brand1 lowercase"
       >
-        <li><NuxtLink to="#projects"><span>Projects</span></NuxtLink></li>
-        <li><NuxtLink to="#about"><span>About</span></NuxtLink></li>
-        <li><NuxtLink to="#contact"><span>Contact</span></NuxtLink></li>
+        <li>
+          <NuxtLink to="#projects"><span>Projects</span></NuxtLink>
+        </li>
+        <li>
+          <NuxtLink to="#about"><span>About</span></NuxtLink>
+        </li>
+        <li>
+          <NuxtLink to="#contact"><span>Contact</span></NuxtLink>
+        </li>
       </ul>
     </nav>
   </header>
