@@ -1,10 +1,30 @@
+import { Environment, globalSettings } from './environment/settings';
+
+const getEnv = (process.env.NUXT_SITE_ENV || Environment.LOCAL) as Environment;
+const getSettings = globalSettings[getEnv];
+
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
-  modules: ['nuxt-icon', '@nuxt/image'],
+  modules: ['nuxt-icon', '@nuxt/image', '@nuxtjs/seo'],
   runtimeConfig: {
     public: {
-      DEPLOY_STAGE: process.env.DEPLOY_STAGE,
+      env: process.env.NUXT_SITE_ENV,
+      gtmId: getSettings.gtmId,
+      gtmEnabled: getSettings.gtmEnabled,
+      gtmDebug: getSettings.gtmDebug,
+    },
+  },
+  site: {
+    url: 'https://www.jessez.dev',
+    name: 'jessez.dev',
+    description: 'Front-end developer based in Vermont.',
+    defaultLocale: 'en',
+    trailingSlash: false,
+  },
+  app: {
+    head: {
+      titleTemplate: '%s %separator %siteName',
     },
   },
   css: ['~/assets/style/main.scss'],

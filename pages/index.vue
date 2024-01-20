@@ -226,6 +226,11 @@ picture :deep(img) {
 </style>
 
 <script setup lang="ts">
+
+definePageMeta({
+  title: 'Jesse | Front-end Developer'
+})
+
 const skills = [
   'Front-end Development',
   'Technical SEO',
