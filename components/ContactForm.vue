@@ -25,6 +25,7 @@
           v-model.trim="contactFormName"
           type="text"
           name="name"
+          autocomplete="true"
           required
         />
       </div>
@@ -37,6 +38,7 @@
           v-model.trim="contactFormEmail"
           type="email"
           name="email"
+          autocomplete="true"
           required
         />
       </div>
