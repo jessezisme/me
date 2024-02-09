@@ -29,11 +29,11 @@
       <div>
         <NuxtPicture
           src="/assets/images/home/home-vermont.jpg"
-          class="aspect-video block w-full rounded-lg max-w-[80%] md:max-w-full sepia-[65%] border-8 border-black"
+          class="aspect-video block w-full max-w-[80%] md:max-w-full"
           alt="Vermont landscape."
           sizes="100vw md:600px"
           preload
-          :imgAttrs="{ id: 'my-id', class: 'w-full h-full object-cover' }"
+          :imgAttrs="{ id: 'my-id', class: 'w-full h-full object-cover sepia-[65%] border-8 border-black rounded-lg' }"
         />
       </div>
     </div>
@@ -226,10 +226,9 @@ picture :deep(img) {
 </style>
 
 <script setup lang="ts">
-
 definePageMeta({
-  title: 'Jesse | Front-end Developer'
-})
+  title: 'Jesse | Front-end Developer',
+});
 
 const skills = [
   'Front-end Development',

@@ -22,6 +22,9 @@ export default defineNuxtConfig({
     defaultLocale: 'en',
     trailingSlash: false,
   },
+  robots: {
+    sitemap: ['/sitemap.xml'],
+  },
   app: {
     head: {
       titleTemplate: '%s %separator %siteName',
